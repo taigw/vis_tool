@@ -24,9 +24,9 @@ def add_countor(In, Seg, Color=(0, 255, 0)):
 def add_segmentation(image, seg_name, Color=(0, 255, 0)):
     seg = Image.open(seg_name).convert('L')
     seg = np.asarray(seg)
-    if(img.size[1] != seg.shape[0] or img.size[0] != seg.shape[1]):
+    if(image.size[1] != seg.shape[0] or image.size[0] != seg.shape[1]):
         print('segmentation has been resized')
-    seg = scipy.misc.imresize(seg, (img.size[1], img.size[0]), interp='nearest')
+    seg = scipy.misc.imresize(seg, (image.size[1], image.size[0]), interp='nearest')
     strt = ndimage.generate_binary_structure(2, 1)
     seg = np.asarray(ndimage.morphology.binary_opening(seg, strt), np.uint8)
     seg = np.asarray(ndimage.morphology.binary_closing(seg, strt), np.uint8)
@@ -37,14 +37,15 @@ def add_segmentation(image, seg_name, Color=(0, 255, 0)):
     img_show = add_countor(img_show, Image.fromarray(seg), Color)
     return img_show
 
-img_name = "data/img.png"
-seg_name = "data/seg.png"
-gld_name = "data/gld.png"
-img = Image.open(img_name)
-img_show = add_segmentation(img, gld_name, Color = (255, 255, 0))
-img_show = add_segmentation(img_show, seg_name, Color = (0, 255, 0))
-plt.imshow(img_show)
-plt.axis('off')
-plt.show()
-save_name = "data/contour.png"
-img_show.save(save_name)
+if __name__ == "__main__":
+    img_name = "data/img.png"
+    seg_name = "data/seg.png"
+    gld_name = "data/gld.png"
+    img = Image.open(img_name)
+    img_show = add_segmentation(img, gld_name, Color = (255, 255, 0))
+    img_show = add_segmentation(img_show, seg_name, Color = (0, 255, 0))
+    plt.imshow(img_show)
+    plt.axis('off')
+    plt.show()
+    save_name = "data/contour.png"
+    img_show.save(save_name)
