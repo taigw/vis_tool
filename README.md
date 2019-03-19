@@ -20,6 +20,6 @@ python show_boxplot.py
 
 3, Fuse a heatmap with an image
 ```bash 
-python show_boxplot.py
+python show_fused_heatmap.py
 ```
-![A heatmap result](./data/img_vs_heatmap.png)
+![A heatmap result](./data/img_vs_example.png)
