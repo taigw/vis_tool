@@ -12,10 +12,14 @@ python show_segmentation_contour.py
 In this example, the ground truth is shown in yellow color and the segmentation is shown with green color.
 
 
-
-
 2, Use boxplot to compare the performance of different methods on a set of data.
 ```bash 
 python show_boxplot.py
 ```
 ![A boxplot result](./data/performance_boxplot.png)
+
+3, Fuse a heatmap with an image
+```bash 
+python show_boxplot.py
+```
+![A heatmap result](./data/img_vs_heatmap.png)
