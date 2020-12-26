@@ -5,6 +5,14 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 def add_countor(In, Seg, Color=(0, 255, 0)):
+    """
+    add segmentation contour to an input image
+
+    In: Input PIL.Image object, should be an RGB image
+    Seg: segmentation mask represented by a PIL.Image object
+    Color: a vector specifying the color of contour
+    Out: output PIL.Image object with segmentation contour overlayed
+    """
     Out = In.copy()
     [H, W] = In.size
     for i in range(H):
@@ -23,10 +31,10 @@ def add_countor(In, Seg, Color=(0, 255, 0)):
 
 def add_segmentation(image, seg_name, Color=(0, 255, 0)):
     seg = Image.open(seg_name).convert('L')
-    seg = np.asarray(seg)
-    if(image.size[1] != seg.shape[0] or image.size[0] != seg.shape[1]):
+    if(image.size[1] != seg.size[1] or image.size[0] != seg.size[0]):
         print('segmentation has been resized')
-    seg = scipy.misc.imresize(seg, (image.size[1], image.size[0]), interp='nearest')
+        seg = seg.resize(image.size)
+    seg = np.asarray(seg)
     strt = ndimage.generate_binary_structure(2, 1)
     seg = np.asarray(ndimage.morphology.binary_opening(seg, strt), np.uint8)
     seg = np.asarray(ndimage.morphology.binary_closing(seg, strt), np.uint8)
