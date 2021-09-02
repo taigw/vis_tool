@@ -6,8 +6,7 @@ Python scripts to visualize exeprimental results for image computing researches
 ```bash 
 python show_segmentation_contour.py
 ```
-
-![A segmentation result](./data/contour.png)
+<img src="./data/contour.png" width ="256">
 
 In this example, the ground truth is shown in yellow color and the segmentation is shown with green color.
 
@@ -16,17 +15,16 @@ In this example, the ground truth is shown in yellow color and the segmentation 
 ```bash 
 python show_boxplot.py
 ```
-![A boxplot result](./data/performance_boxplot.png)
+<img src="./data/performance_boxplot.png" width="256">
 
 3, Fuse a heatmap with an image
 ```bash 
 python show_fused_heatmap.py
 ```
-![A heatmap result](./data/img_vs_example.png)
+<img src="./data/img_vs_example.png">
 
 4, Show forest plot of logitic regression
 ```
 python show_forest_plot.py
 ```
-![A forest plot](./data/forest_plot.png)
-<img src="./data/forest_plot.png" width="150">
+<img src="./data/forest_plot.png">
