@@ -29,3 +29,4 @@ python show_fused_heatmap.py
 python show_forest_plot.py
 ```
 ![A forest plot](./data/forest_plot.png)
+<img src="./data/forest_plot.png" width="150">
