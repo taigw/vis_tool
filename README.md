@@ -23,3 +23,9 @@ python show_boxplot.py
 python show_fused_heatmap.py
 ```
 ![A heatmap result](./data/img_vs_example.png)
+
+4, Show forest plot of logitic regression
+```
+python show_forest_plot.py
+```
+![A forest plot](./data/forest_plot.png)
