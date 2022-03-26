@@ -9,7 +9,7 @@ plt.rcParams["font.weight"] = 'normal'
 expr = 2
 csv_file = "data/seaborn_boxplot.csv"
 savename = "data/seaborn_boxplot.pdf"
-metrics = ['Dice', 'RVE', "HD$_{95}$ (mm)"]
+metrics = ['Metric 1', 'Metric 2', "Metric 3"]
 data = pd.read_csv(csv_file)
 
 flierprops = dict(marker = '.', markerfacecolor = '1.0', markersize = 1,  linestyle = 'none')
@@ -36,7 +36,7 @@ plt.legend().remove()
 
 plt.subplot(1,3,3)
 #sns.set(style = "whitegrid")
-ax = sns.boxplot(x = "Group", y = "HD", hue = "Method", linewidth=.5,
+ax = sns.boxplot(x = "Group", y =  metrics[2], hue = "Method", linewidth=.5,
       data = data, flierprops = flierprops)    
 plt.ylabel(metrics[2])
 plt.xlabel('')

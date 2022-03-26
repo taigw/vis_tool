@@ -17,13 +17,19 @@ python show_boxplot.py
 ```
 <img src="./data/performance_boxplot.png" width="256">
 
-3, Fuse a heatmap with an image
+3, Use seaborn to show boxplot.
+```bash
+python show_boxplot_seaborn.py
+```
+<img src="./data/seaborn_boxplot.png">
+
+4, Fuse a heatmap with an image
 ```bash 
 python show_fused_heatmap.py
 ```
 <img src="./data/img_vs_example.png">
 
-4, Show forest plot of logitic regression
+5, Show forest plot of logitic regression
 ```
 python show_forest_plot.py
 ```
